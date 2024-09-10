@@ -1,0 +1,18 @@
+name: foo
+
+on:
+  schedule:
+    - cron: '45 21 4,19 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: foo
+  cancel-in-progress: false
+
+jobs:
+
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+
+      - run: :
