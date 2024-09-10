@@ -20,6 +20,7 @@ jobs:
       - name: Re-enable workflow
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ env.GITHUB_REPOSITORY }}
         run: |
           gh workflow enable "$GITHUB_RUN_ID"
           gh workflow enable foo.yml
